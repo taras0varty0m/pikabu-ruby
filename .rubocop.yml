@@ -101,10 +101,12 @@ Metrics/ModuleLength:
 Metrics/MethodLength:
   Exclude:
     - 'db/migrate/**'
+    - 'app/controllers/graphql_controller.rb'
 
 Metrics/AbcSize:
   Exclude:
     - 'db/migrate/**'
+    - 'app/controllers/graphql_controller.rb'
 
 Lint/MissingSuper:
   Exclude:
