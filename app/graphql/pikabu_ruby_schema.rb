@@ -13,7 +13,9 @@ class PikabuRubySchema < GraphQL::Schema
   def self.resolve_type(_type, object, _ctx)
     type_class = "::Types::#{object.class}Type".safe_constantize
 
-    raise ArgumentError, "Cannot resolve type for class #{object.class.name}" unless type_class.present?
+    unless type_class.present?
+      raise ArgumentError, "Cannot resolve type for class #{object.class.name}"
+    end
 
     type_class
   end
